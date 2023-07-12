@@ -81,7 +81,7 @@
                     <div class="detail-box">
                       <div>
                         <h1>
-                          As melhores cameras para si
+                          Arduino
                         </h1>
                         <h2>
                           Do it yourself 
@@ -92,7 +92,7 @@
                   </div>
                   <div class="col-md-5">
                     <div class="img-box">
-                      <img src="images/cameraslide2.png" alt="" />
+                      <img src="images/arduino-logo.png" alt="" />
                     </div>
                   </div>
                 </div>
@@ -107,81 +107,70 @@
     <!-- end slider section -->
   </div>
 
-<!-- how section -->
-  <section class="how_section layout_padding">
-    
-    <div class="how_container">
-      <a href="https://www.amazon.com/Indoor-Outdoor-Camera-Vision-Assistant/dp/B08R59YH7W?&linkCode=ll1&tag=safewicom-20&linkId=7840e8bc38c806a1eca099f3fb77a2fa&language=en_US&ref_=as_li_ss_tl">
+<!-- about section -->
+
+  <section class="about_section layout_padding-bottom">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Do it Yourself Arduino
+        </h2>
+      </div>
       <div class="box">
 
         <div class="img-box">
+          <img src="images/arduino.png" width="300px" height="300px" alt="">
+        </div>
+        <div class="detail-box">
+          <p> <br> <br>
+           Este codigo e um script do arduino
+
+
+          </p>
           
-<?xml version="1.0" encoding="UTF-8"?> <img src="images/cam1.png">
-
-        </div>
-        
-        <div>
-          <h5>
-            WYZE Cam
-          </h5>
-          <p >
-            WYZE Cam v3 with Color Night Vision, Wired 1080p HD Indoor/Outdoor Video Camera, 2-Way Audio, Works with Alexa, Google Assistant, and IFTTT 
-          </p>
-        </div>
-      </a>
-      </a> 
-      </div>
-                 <a href="https://www.amazon.com/REOLINK-Spotlight-Detection-Dual-Band-Wire-Free/dp/B08S7Q3BSH?maas=maas_adg_EE781F9411E481E9AD6B0E66CCEDAE30_afap_abs&linkCode=ll1&tag=safewicom-20&linkId=d0569dc381324852a8cdd4a2d26113e4&language=en_US&ref_=as_li_ss_tl&th=1">
-      <div class="box">
-        <div class="img-box">
-          <img src="/images/cam.png">
-        </div>
-        <div class="detail-box">
-          <h5>
-            REOLINK
-
-          </h5>
-          <p c>
- REOLINK 4MP Solar Security Cameras Wireless Outdoor, Argus 3 Pro+Solar Panel with 2K Color Night Vision, 2.4/5GHz WiFi, Human/Vehicle Detection, Battery Powered Home Security Camera, No Hub Needed 
-          </p>
-        </div>
-        </a>
-      </div>
-      <a href="/conteudo3">
-      <div class="box">
-        <div class="img-box">
-          <?xml version="1.0" encoding="UTF-8"?> <img src="images/cam2.png">
-        </div>
-        <div class="detail-box">
-          <h5>
-            Arlo Pro 4
-          </h5>
-          <p>
-             Arlo Pro 4 Spotlight Camera - 1 Pack - Wireless Security, 2K Video & HDR, Color Night Vision, 2 Way Audio, Wire-Free, Direct to WiFi No Hub Needed, White - VMC4050P 
-          </p>
-        </div>
-      </div>
-      </a>
-      <a href="https://www.amazon.es/-/pt/dp/B0814LGG56/ref=asc_df_B0814LGG56/?tag=ptgogshpadde-21&linkCode=df0&hvadid=633437902017&hvpos=&hvnetw=g&hvrand=10024248140298644279&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1011756&hvtargid=pla-938155695727&psc=1">
-      <div class="box">
-        <div class="img-box">
           
-<img src="/images/cam3.jpg">
         </div>
-        <div class="detail-box">
-          <h5>
-            Anlapus 1080P
-          </h5>
-          <p >
-             Anlapus 1080P Câmara de vigilância exterior 4 peças câmara de segurança, visão noturna 20 m, preto 
-          </p>
-        </div>
+        <pre>
+#include <Boards.h>
+#include <Firmata.h>
+#include <FirmataConstants.h>
+#include <FirmataDefines.h>
+#include <FirmataMarshaller.h>
+#include <FirmataParser.h>
+
+from pyfirmata import Arduino,SERVO
+from time import sleep
+
+port = 'COM4'
+pinH = 8
+pinV = 10
+board = Arduino(port)
+
+board.digital[pinH].mode = SERVO
+board.digital[pinV].mode = SERVO
+
+def rotateServo(pin,angle):
+    board.digital[pin].write(angle)
+    sleep(0.070)
+
+while True:
+ for x in range(0,180):
+ rotateServo(pin,x)
+ for i in range(180,1,-1):
+ rotateServo(pin, i)
+
+while True:
+    pin = input('digite a saída')
+    valor = input('digite o valor')
+    rotateServo(int(pin),valor)
+
+
+
+          </pre>
       </div>
     </div>
-    </a>
-   
   </section>
-  <!-- end how section -->
+  <!-- end about section -->
 
   
 
