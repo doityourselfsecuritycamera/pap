@@ -50,7 +50,7 @@ body {
   left: 50%;
   width: 75px;
   height: 5px;
-  background-color: #30ae69;
+  background-color: #0000FF;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
 }
@@ -176,7 +176,7 @@ a:focus {
   bottom: 0;
   width: 45px;
   height: 45px;
-  background-color: #30ae69;
+  ackground-color: #0000FF;
   z-index: 2;
 }
 
@@ -342,7 +342,7 @@ a:focus {
 }
 
 .how_section .how_container .box:hover .img-box {
-  background-color: #30ae69;
+  background-color: #ADD8E6;
 }
 
 .how_section .how_container .box:hover .img-box svg {
@@ -713,7 +713,7 @@ section.app_section .img-box img {
   bottom: 0;
   width: 60px;
   height: 55px;
-  background-color: #30ae69;
+  background-color: #0000FF;
   z-index: 2;
 }
 

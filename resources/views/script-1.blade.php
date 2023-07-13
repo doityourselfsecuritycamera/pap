@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
 
@@ -12,7 +14,7 @@
   <meta name="description" content="" />
   <meta name="author" content="" />
 
-  <title>Cryptop</title>
+  <title>Do It Yourself Security Camera</title>
 
   <!-- slider stylesheet -->
   <!-- slider stylesheet -->
@@ -36,9 +38,9 @@
     <header class="header_section">
       <div class="container-fluid">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="index.html">
+          <a class="navbar-brand" href="/">
             <span>
-              Cryptop
+              Do It Yourself Security Camera
             </span>
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -49,93 +51,143 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
               <ul class="navbar-nav  ">
-                <li class="nav-item ">
-                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                </li>
                 <li class="nav-item active">
-                  <a class="nav-link" href="about.html"> About </a>
+                  <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="how.html"> How </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">
-                    <span>Wallet</span> <img src="images/wallet.png" alt="" />
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#"> Login</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#"> Sign Up</a>
-                </li>
+               
+                
               </ul>
-              <div class="user_option">
-                <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
-                  <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
-                </form>
-              </div>
+              
             </div>
           </div>
         </nav>
       </div>
     </header>
     <!-- end header section -->
+    <!-- slider section -->
+    <section class=" slider_section position-relative">
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+         
+
+          
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="container">
+              <div class="box">
+                <div class="row">
+                  <div class="col-md-7">
+                    <div class="detail-box">
+                      <div>
+                        <h1>
+                          Python
+                        </h1>
+                        <h2>
+                          Do it yourself 
+                        </h2>
+                        
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-5">
+                    <div class="img-box">
+                      <img src="images/python.png" alt="" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+         
+        </div>
+      </div>
+    </section>
+    <!-- end slider section -->
   </div>
 
-  <!-- about section -->
+<!-- about section -->
 
-  <section class="about_section layout_padding">
+  <section class="about_section layout_padding-bottom">
     <div class="container">
       <div class="heading_container">
         <h2>
-          About Cryptop
+          Do it Yourself Servo
         </h2>
       </div>
       <div class="box">
+
         <div class="img-box">
-          <img src="images/about-img.png" alt="">
+          <img src="images/servo.png" width="300px" height="300px" alt="">
         </div>
         <div class="detail-box">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniamLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore
-            et dolore magna aliqua. Ut enim ad minim
+          <p> <br> <br>
+           Este codigo e um script de python do servo
+
+
           </p>
-          <div class="btn-box">
-            <a href="">
-              Read More
-            </a>
-          </div>
+          
+          
         </div>
+        <pre>
+from pyfirmata import Arduino,SERVO
+from time import sleep
+
+port = 'COM4'
+pinH = 8
+pinV = 10
+board = Arduino(port)
+
+board.digital[pinH].mode = SERVO
+board.digital[pinV].mode = SERVO
+
+def rotateServo(pin,angle):
+    board.digital[pin].write(angle)
+    sleep(0.070)
+
+    while True:
+     for x in range(0,180):
+         rotateServo(pinH,x)
+     for i in range(180,1,-1):
+        rotateServo(pinV, i)
+          </pre>
       </div>
     </div>
   </section>
   <!-- end about section -->
 
+  
+
+ 
+
+
+ 
+
+  
+
   <!-- info section -->
   <section class="info_section layout_padding">
     <div class="container">
       <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-4">
           <div class="info_contact">
             <div class="info_logo">
-              <a href="index.html">
+              <a href="/">
                 <span>
-                  Cryptop
+                  Do It Yourself Security Camera
                 </span>
               </a>
             </div>
             <h5>
-              Contact Us
+              Contacte nos!
             </h5>
             <div>
               <div class="img-box">
                 <img src="images/location.png" width="18px" alt="" />
               </div>
               <p>
-                Page when looking at its layou
+                R. do Covelo 205, 4200-239 Porto
               </p>
             </div>
             <div>
@@ -143,7 +195,7 @@
                 <img src="images/phone.png" width="18px" alt="" />
               </div>
               <p>
-                +01 1234567890
+                22 507 2670
               </p>
             </div>
             <div>
@@ -151,80 +203,22 @@
                 <img src="images/envelope.png" width="18px" alt="" />
               </div>
               <p>
-                demo@gmail.com
+                securecam28sc@gmail.com
               </p>
             </div>
           </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-8">
           <div class="info_info">
             <h5>
-              Invest Money
+              Invista nos conhecimentos
             </h5>
             <p>
-              There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
-              in some form, by injected humour,
-            </p>
+              Nossa missão é capacitar os entusiastas da segurança doméstica a assumirem o controle de sua proteção residencial, fornecendo recursos valiosos sobre câmeras de segurança caseiras. Seja você um iniciante curioso ou um especialista em eletrônica, nosso site é projetado para atender a todas as necessidades.            </p>
           </div>
         </div>
 
-        <div class="col-md-3">
-          <div class="info_links">
-            <h5>
-              Useful Links
-            </h5>
-            <ul>
-              <li>
-                <a href="">
-                  There are many
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  variations of
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  passages of
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  Lorem Ipsum
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  available, but the
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  majority have
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  suffered
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="info_form ">
-            <h5>
-              Newsletter
-            </h5>
-            <form action="">
-              <input type="email" placeholder="Enter your email" />
-              <button>
-                Subscribe
-              </button>
-            </form>
-          </div>
-        </div>
+        
       </div>
     </div>
   </section>
@@ -234,8 +228,8 @@
   <!-- footer section -->
   <section class="container-fluid footer_section">
     <p>
-      &copy; 2019 All Rights Reserved By
-      <a href="https://html.design/">Free Html Templates</a>
+      &copy; 2023 All Rights Reserved By
+      <a href="https://html.design/">Ginja</a>
     </p>
   </section>
   <!-- footer section -->

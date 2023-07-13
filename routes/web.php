@@ -32,3 +32,15 @@ Route::get('/conteudo3', function () {
 Route::get('/conteudo4', function () {
     return view('conteudo4');
 });
+
+Route::get('/script-1', function () {
+    return view('script-1');
+});
+
+Route::get('/script-2', function () {
+    return view('script-2');
+});
+
+Route::get('/script-3', function () {
+    return view('script-3');
+});

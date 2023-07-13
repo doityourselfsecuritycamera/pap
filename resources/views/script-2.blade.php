@@ -81,7 +81,7 @@
                     <div class="detail-box">
                       <div>
                         <h1>
-                          As melhores cameras para si
+                          Python
                         </h1>
                         <h2>
                           Do it yourself 
@@ -92,7 +92,7 @@
                   </div>
                   <div class="col-md-5">
                     <div class="img-box">
-                      <img src="images/cameraslide2.png" alt="" />
+                      <img src="images/python.png" alt="" />
                     </div>
                   </div>
                 </div>
@@ -107,81 +107,110 @@
     <!-- end slider section -->
   </div>
 
-<!-- how section -->
-  <section class="how_section layout_padding">
-    
-    <div class="how_container">
-      <a href="https://www.amazon.com/Indoor-Outdoor-Camera-Vision-Assistant/dp/B08R59YH7W?&linkCode=ll1&tag=safewicom-20&linkId=7840e8bc38c806a1eca099f3fb77a2fa&language=en_US&ref_=as_li_ss_tl">
+<!-- about section -->
+
+  <section class="about_section layout_padding-bottom">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Do it Yourself TrackFace
+        </h2>
+      </div>
       <div class="box">
 
         <div class="img-box">
+          <img src="images/track.png" width="300px" height="300px" alt="">
+        </div>
+        <div class="detail-box">
+          <p> <br> <br>
+           Este codigo e um script de python de trackingface
+
+
+          </p>
           
-<?xml version="1.0" encoding="UTF-8"?> <img src="images/cam1.png">
-
-        </div>
-        
-        <div>
-          <h5>
-            WYZE Cam
-          </h5>
-          <p >
-            WYZE Cam v3 with Color Night Vision, Wired 1080p HD Indoor/Outdoor Video Camera, 2-Way Audio, Works with Alexa, Google Assistant, and IFTTT 
-          </p>
-        </div>
-      </a>
-      </a> 
-      </div>
-                 <a href="https://www.amazon.com/REOLINK-Spotlight-Detection-Dual-Band-Wire-Free/dp/B08S7Q3BSH?maas=maas_adg_EE781F9411E481E9AD6B0E66CCEDAE30_afap_abs&linkCode=ll1&tag=safewicom-20&linkId=d0569dc381324852a8cdd4a2d26113e4&language=en_US&ref_=as_li_ss_tl&th=1">
-      <div class="box">
-        <div class="img-box">
-          <img src="/images/cam.png">
-        </div>
-        <div class="detail-box">
-          <h5>
-            REOLINK
-
-          </h5>
-          <p c>
- REOLINK 4MP Solar Security Cameras Wireless Outdoor, Argus 3 Pro+Solar Panel with 2K Color Night Vision, 2.4/5GHz WiFi, Human/Vehicle Detection, Battery Powered Home Security Camera, No Hub Needed 
-          </p>
-        </div>
-        </a>
-      </div>
-      <a href="/conteudo3">
-      <div class="box">
-        <div class="img-box">
-          <?xml version="1.0" encoding="UTF-8"?> <img src="images/cam2.png">
-        </div>
-        <div class="detail-box">
-          <h5>
-            Arlo Pro 4
-          </h5>
-          <p>
-             Arlo Pro 4 Spotlight Camera - 1 Pack - Wireless Security, 2K Video & HDR, Color Night Vision, 2 Way Audio, Wire-Free, Direct to WiFi No Hub Needed, White - VMC4050P 
-          </p>
-        </div>
-      </div>
-      </a>
-      <a href="https://www.amazon.es/-/pt/dp/B0814LGG56/ref=asc_df_B0814LGG56/?tag=ptgogshpadde-21&linkCode=df0&hvadid=633437902017&hvpos=&hvnetw=g&hvrand=10024248140298644279&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1011756&hvtargid=pla-938155695727&psc=1">
-      <div class="box">
-        <div class="img-box">
           
-<img src="/images/cam3.jpg">
         </div>
-        <div class="detail-box">
-          <h5>
-            Anlapus 1080P
-          </h5>
-          <p >
-             Anlapus 1080P Câmara de vigilância exterior 4 peças câmara de segurança, visão noturna 20 m, preto 
-          </p>
-        </div>
+        <pre>
+import cv2
+from pyfirmata import Arduino,SERVO
+from time import sleep
+import mediapipe as mp
+
+face = mp.solutions.face_detection
+Face = face.FaceDetection()
+mpDwaw = mp.solutions.drawing_utils
+
+port = 'COM4'
+pinH = 10
+pinV = 8
+board = Arduino(port)
+
+board.digital[pinH].mode = SERVO
+board.digital[pinV].mode = SERVO
+
+def rotateServo(pin,angle):xa
+positionX = 50
+positionY = 70
+
+rotateServo(pinH, positionX)
+rotateServo(pinV, positionY)
+
+while True:
+    ret, img = cap.read()
+    imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+    results = Face.process(imgRGB)
+    facesPoints = results.detections
+    hO, wO, _ = img.shape
+
+    cv2.line(img,(0,int(hO/2)),(wO,int(hO/2)),(0,255,0),2)
+    cv2.line(img, (int(wO / 2), 0), (int(wO / 2), hO), (0, 255, 0), 2)
+
+    if facesPoints:
+        for id, detection in enumerate(facesPoints):
+            #mpDwaw.draw_detection(img, detection)
+            bbox = detection.location_data.relative_bounding_box
+            x,y,w,h = int(bbox.xmin*wO),int(bbox.ymin*hO),int(bbox.width*wO),int(bbox.height*hO)
+
+            cv2.rectangle(img,(x,y),(x+w,y+h),(0,255,0),2)
+            # centro do rosto
+            xx = int(x + (x + w)) // 2
+            yy = int(y + (y + h)) // 2
+            cv2.circle(img, (xx, yy), 15, (0, 255, 0), cv2.FILLED)
+
+            ctX = int(wO / 2)
+            ctY = int(hO / 2)
+
+            cv2.circle(img, (ctX, ctY), 15, (255, 0, 0), cv2.FILLED)
+
+            #movimento eixo X
+            if xx < (ctX - 50):
+                positionX += 2
+                rotateServo(pinH, positionX)
+            elif xx > (ctX + 50):
+                positionX -= 2
+                rotateServo(pinH, positionX)
+            # movimento eixo Y
+            if yy > (ctY + 50):
+                positionY += 2
+                rotateServo(pinV, positionY)
+            elif yy < (ctY - 50):
+                positionY -= 2
+                rotateServo(pinV, positionY)
+
+
+    cv2.imshow('img', img)
+
+    k = cv2.waitKey(1) & 0xff
+    if k == 27:
+        break
+
+
+
+          </pre>
       </div>
     </div>
-    </a>
-   
   </section>
-  <!-- end how section -->
+  <!-- end about section -->
 
   
 
