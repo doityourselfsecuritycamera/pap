@@ -212,16 +212,16 @@
       <div class="box">
         <div class="img-box">
           
-<?xml version="1.0" encoding="UTF-8"?><svg width="45" height="45" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M48 0H0V48H48V0Z" fill="white" fill-opacity="0.01"/><path d="M19.0059 26.2758V37H5" stroke="#333" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/><path d="M42.6205 21.2153L38.7568 20.18L34.7544 27.3898L40.55 28.9427L42.6205 21.2153Z" stroke="#333" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/><path d="M38.7566 20.18L34.7542 27.3898L33.0118 30.0287L5 22.523L8.62347 9L40.499 17.541L38.7566 20.18Z" fill="none" stroke="#333" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></svg> 
+<?xml version="1.0" encoding="UTF-8"?> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-code" viewBox="0 0 16 16"> <path d="M5.854 4.854a.5.5 0 1 0-.708-.708l-3.5 3.5a.5.5 0 0 0 0 .708l3.5 3.5a.5.5 0 0 0 .708-.708L2.707 8l3.147-3.146zm4.292 0a.5.5 0 0 1 .708-.708l3.5 3.5a.5.5 0 0 1 0 .708l-3.5 3.5a.5.5 0 0 1-.708-.708L13.293 8l-3.147-3.146z"/> </svg> 
 
         </div>
         
         <div class="detail-box">
           <h5>
-            Melhores cameras para si
+            Leitores infravermelhos
           </h5>
           <p>
-            Veja as melhores cameras disponiveis para si
+            Mostramos como e que podemos criar scripts de leitores infravermelhos
           </p>
         </div>
       </a>
@@ -234,15 +234,36 @@
         </div>
         <div class="detail-box">
           <h5>
-            Scripts
+            Camera de Movimentos
 
           </h5>
           <p>
- Mostramos como e que podemos criar script como por exemplo detetar imagens 3d
+ Mostramos como e que podemos criar scripts de movimentos
           </p>
         </div>
         </a>
+
+
       </div>
+      <a href="/conteudo3">
+      <div class="box">
+        <div class="img-box">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-code" viewBox="0 0 16 16"> <path d="M5.854 4.854a.5.5 0 1 0-.708-.708l-3.5 3.5a.5.5 0 0 0 0 .708l3.5 3.5a.5.5 0 0 0 .708-.708L2.707 8l3.147-3.146zm4.292 0a.5.5 0 0 1 .708-.708l3.5 3.5a.5.5 0 0 1 0 .708l-3.5 3.5a.5.5 0 0 1-.708-.708L13.293 8l-3.147-3.146z"/> </svg> 
+        </div>
+        <div class="detail-box">
+          <h5>
+            Detetor Imagens 3D
+
+          </h5>
+          <p>
+ Mostramos como e que podemos criar scripts detetor imagens 3d
+          </p>
+        </div>
+        </a>
+
+        
+      </div>
+      
       
    
   </section>

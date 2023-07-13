@@ -81,7 +81,7 @@
                     <div class="detail-box">
                       <div>
                         <h1>
-                          Scripts
+                          Python
                         </h1>
                         <h2>
                           Do it yourself 
@@ -92,7 +92,7 @@
                   </div>
                   <div class="col-md-5">
                     <div class="img-box">
-                      <img src="images/script.png" alt="" />
+                      <img src="images/python.png" alt="" />
                     </div>
                   </div>
                 </div>
@@ -107,68 +107,55 @@
     <!-- end slider section -->
   </div>
 
-<!-- how section -->
-  <section class="how_section layout_padding">
-    <div class="heading_container">
-      <h2>
-        Do It Yourself Scripts
-      </h2>
-    </div>
-    <div class="how_container">
-      <a href="/script-infra1">
+<!-- about section -->
+
+  <section class="about_section layout_padding-bottom">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Do it Yourself Servo
+        </h2>
+      </div>
       <div class="box">
+
         <div class="img-box">
+          <img src="images/servo.png" width="300px" height="300px" alt="">
+        </div>
+        <div class="detail-box">
+          <p> <br> <br>
+           Este codigo e um script de python do servo
+
+
+          </p>
           
-<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-code" viewBox="0 0 16 16"> <path d="M5.854 4.854a.5.5 0 1 0-.708-.708l-3.5 3.5a.5.5 0 0 0 0 .708l3.5 3.5a.5.5 0 0 0 .708-.708L2.707 8l3.147-3.146zm4.292 0a.5.5 0 0 1 .708-.708l3.5 3.5a.5.5 0 0 1 0 .708l-3.5 3.5a.5.5 0 0 1-.708-.708L13.293 8l-3.147-3.146z"/> </svg> 
+          
+        </div>
+        <pre>
+from pyfirmata import Arduino,SERVO
+from time import sleep
 
-        </div>
-        
-        <div class="detail-box">
-          <h5>
-            Servo
-          </h5>
-          <p>
-            Script Python
-          </p>
-        </div>
-      </a>
-      </a> 
-      </div>
-                 <a href="/script-infra2">
-      <div class="box">
-        <div class="img-box">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-code" viewBox="0 0 16 16"> <path d="M5.854 4.854a.5.5 0 1 0-.708-.708l-3.5 3.5a.5.5 0 0 0 0 .708l3.5 3.5a.5.5 0 0 0 .708-.708L2.707 8l3.147-3.146zm4.292 0a.5.5 0 0 1 .708-.708l3.5 3.5a.5.5 0 0 1 0 .708l-3.5 3.5a.5.5 0 0 1-.708-.708L13.293 8l-3.147-3.146z"/> </svg> 
-        </div>
-        <div class="detail-box">
-          <h5>
-            trackingFace.py
+port = 'COM4'
+pinH = 8
+pinV = 10
+board = Arduino(port)
 
-          </h5>
-          <p>
- Mostramos como e que podemos criar script como por exemplo detetar imagens 3d
-          </p>
-        </div>
-        </a>
+board.digital[pinH].mode = SERVO
+board.digital[pinV].mode = SERVO
+
+def rotateServo(pin,angle):
+    board.digital[pin].write(angle)
+    sleep(0.070)
+
+    while True:
+     for x in range(0,180):
+         rotateServo(pinH,x)
+     for i in range(180,1,-1):
+        rotateServo(pinV, i)
+          </pre>
       </div>
-      <a href="/script-infra3">
-      <div class="box">
-        <div class="img-box">
-          <?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-code" viewBox="0 0 16 16"> <path d="M5.854 4.854a.5.5 0 1 0-.708-.708l-3.5 3.5a.5.5 0 0 0 0 .708l3.5 3.5a.5.5 0 0 0 .708-.708L2.707 8l3.147-3.146zm4.292 0a.5.5 0 0 1 .708-.708l3.5 3.5a.5.5 0 0 1 0 .708l-3.5 3.5a.5.5 0 0 1-.708-.708L13.293 8l-3.147-3.146z"/> </svg> 
-        </div>
-        <div class="detail-box">
-          <h5>
-            Arduino.ini
-          </h5>
-          <p>
-             Script de arduino
-          </p>
-        </div>
-      </div>
-      </a>
-      
-   
+    </div>
   </section>
-  <!-- end how section -->
+  <!-- end about section -->
 
   
 

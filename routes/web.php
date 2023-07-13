@@ -44,3 +44,28 @@ Route::get('/script-2', function () {
 Route::get('/script-3', function () {
     return view('script-3');
 });
+
+Route::get('/script-infra1', function () {
+    return view('script-infra1');
+});
+
+Route::get('/script-infra2', function () {
+    return view('script-infra2');
+});
+
+Route::get('/script-infra3', function () {
+    return view('script-infra3');
+});
+
+
+Route::get('/script-det1', function () {
+    return view('script-det1');
+});
+
+Route::get('/script-det2', function () {
+    return view('script-det2');
+});
+
+Route::get('/script-det3', function () {
+    return view('script-det3');
+});
