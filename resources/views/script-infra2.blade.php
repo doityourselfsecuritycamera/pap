@@ -81,7 +81,7 @@
                     <div class="detail-box">
                       <div>
                         <h1>
-                          Scripts
+                          Python
                         </h1>
                         <h2>
                           Do it yourself 
@@ -92,7 +92,7 @@
                   </div>
                   <div class="col-md-5">
                     <div class="img-box">
-                      <img src="images/script.png" alt="" />
+                      <img src="images/python.png" alt="" />
                     </div>
                   </div>
                 </div>
@@ -107,36 +107,89 @@
     <!-- end slider section -->
   </div>
 
-<!-- how section -->
-  <section class="how_section layout_padding">
-    <div class="heading_container">
-      <h2>
-        Do It Yourself Scripts
-      </h2>
-    </div>
-    <div class="how_container">
+<!-- about section -->
 
-                 <a href="/script-det2">
-      <div class="box">
-        <div class="img-box">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-code" viewBox="0 0 16 16"> <path d="M5.854 4.854a.5.5 0 1 0-.708-.708l-3.5 3.5a.5.5 0 0 0 0 .708l3.5 3.5a.5.5 0 0 0 .708-.708L2.707 8l3.147-3.146zm4.292 0a.5.5 0 0 1 .708-.708l3.5 3.5a.5.5 0 0 1 0 .708l-3.5 3.5a.5.5 0 0 1-.708-.708L13.293 8l-3.147-3.146z"/> </svg> 
-        </div>
-        <div class="detail-box">
-          <h5>
-            trackingFace.py
-
-          </h5>
-          <p>
- Mostramos como e que podemos criar script como por exemplo detetar imagens 3d
-          </p>
-        </div>
-        </a>
+  <section class="about_section layout_padding-bottom">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Do it Yourself 
+        </h2>
       </div>
-   
-      
-   
+      <div class="box">
+
+        
+        <div class="detail-box">
+          <p> <br> <br>
+           Este codigo e um script de python sensor proximidade
+
+
+          </p>
+          
+          
+        </div>
+        <pre>
+import cv2
+import mediapipe as mp
+import time
+
+faceDetector = mp.solutions.face_detection
+drawing = mp.solutions.drawing_utils
+
+
+# For webcam input:
+cap = cv2.VideoCapture(0)
+
+with faceDetector.FaceDetection(
+
+    min_detection_confidence=0.5) as face_detection:
+
+  while cap.isOpened():
+
+    success, image = cap.read()
+
+    start = time.time()
+
+    if not success:
+      print("Ignoring empty camera frame.")
+      # If loading a video, use 'break' instead of 'continue'.
+      continue
+
+    # Convert the BGR image to RGB.
+    image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+
+    # To improve performance, optionally mark the image as not writeable to
+    # pass by reference.
+    image.flags.writeable = False
+    results = face_detection.process(image)
+
+    # Draw the face detection annotations on the image.
+    image.flags.writeable = True
+    image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
+ 
+    if results.detections:
+      for id, detection in enumerate(results.detections):
+        drawing.draw_detection(image, detection)
+
+    end = time.time()
+    totalTime = end - start
+
+    fps = 1 / totalTime
+    print("FPS: ", fps)
+
+    cv2.putText(image, f'FPS: {int(fps)}', (20,70), cv2.FONT_HERSHEY_SIMPLEX, 2, (0,255,0), 2)
+
+    cv2.imshow('MediaPipe Face Detection', image)
+
+    if cv2.waitKey(5) & 0xFF == 27:
+      break
+
+cap.release()
+          </pre>
+      </div>
+    </div>
   </section>
-  <!-- end how section -->
+  <!-- end about section -->
 
   
 

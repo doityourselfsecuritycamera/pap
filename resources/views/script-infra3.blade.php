@@ -81,7 +81,7 @@
                     <div class="detail-box">
                       <div>
                         <h1>
-                          Scripts
+                          Arduino
                         </h1>
                         <h2>
                           Do it yourself 
@@ -92,7 +92,7 @@
                   </div>
                   <div class="col-md-5">
                     <div class="img-box">
-                      <img src="images/script.png" alt="" />
+                      <img src="images/arduino-logo.png" alt="" />
                     </div>
                   </div>
                 </div>
@@ -107,36 +107,166 @@
     <!-- end slider section -->
   </div>
 
-<!-- how section -->
-  <section class="how_section layout_padding">
-    <div class="heading_container">
-      <h2>
-        Do It Yourself Scripts
-      </h2>
-    </div>
-    <div class="how_container">
+<!-- about section -->
 
-                 <a href="/script-det2">
+  <section class="about_section layout_padding-bottom">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Do it Yourself Arduino
+        </h2>
+      </div>
       <div class="box">
+
         <div class="img-box">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-code" viewBox="0 0 16 16"> <path d="M5.854 4.854a.5.5 0 1 0-.708-.708l-3.5 3.5a.5.5 0 0 0 0 .708l3.5 3.5a.5.5 0 0 0 .708-.708L2.707 8l3.147-3.146zm4.292 0a.5.5 0 0 1 .708-.708l3.5 3.5a.5.5 0 0 1 0 .708l-3.5 3.5a.5.5 0 0 1-.708-.708L13.293 8l-3.147-3.146z"/> </svg> 
+          
         </div>
         <div class="detail-box">
-          <h5>
-            trackingFace.py
+       
+          <p> <br> <br>
 
-          </h5>
-          <p>
- Mostramos como e que podemos criar script como por exemplo detetar imagens 3d
+           
+Codigo do Sensor de Proximidade .ino
+
           </p>
+          
+          
         </div>
-        </a>
+        <pre>
+const int TRIG = 3, ECHO = 2, buzzer = 5;
+int intervalo, distancia;
+
+int sensor_objeto(int pinotrig,int pinoecho){
+  pinMode(pinotrig, OUTPUT);
+  digitalWrite(pinotrig,LOW);
+  delayMicroseconds(2);
+  digitalWrite(pinotrig,HIGH);
+  delayMicroseconds(10);
+  digitalWrite(pinotrig,LOW);
+
+  return pulseIn(pinoecho,HIGH)/58;
+}
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(TRIG,OUTPUT);
+  pinMode(ECHO,INPUT);
+  pinMode(buzzer,OUTPUT);
+  pinMode(7,OUTPUT);
+  pinMode(8,OUTPUT);
+  pinMode(9,OUTPUT);
+  pinMode(10,OUTPUT);
+  pinMode(11,OUTPUT);
+  pinMode(12,OUTPUT);
+  pinMode(13,OUTPUT);
+}
+
+void loop() {
+
+  distancia = sensor_objeto(TRIG,ECHO);
+  Serial.println(distancia);
+  if (distancia <= 10) {
+    digitalWrite(13,HIGH);
+    digitalWrite(12,HIGH);
+    digitalWrite(11,HIGH);
+    digitalWrite(10,HIGH);
+    digitalWrite(9,HIGH);
+    digitalWrite(8,HIGH);
+    digitalWrite(7,HIGH);
+    tone(buzzer, 1750);
+  }
+
+  else if (distancia > 60) {
+    digitalWrite(13,LOW);
+    digitalWrite(12,LOW);
+    digitalWrite(11,LOW);
+    digitalWrite(10,LOW);
+    digitalWrite(9,LOW);
+    digitalWrite(8,LOW);
+    digitalWrite(7,LOW);
+    noTone(buzzer);
+  }
+  else {
+    if (distancia <= 15) {
+      digitalWrite(13,LOW);
+    digitalWrite(12,HIGH);
+    digitalWrite(11,HIGH);
+    digitalWrite(10,HIGH);
+    digitalWrite(9,HIGH);
+    digitalWrite(8,HIGH);
+    digitalWrite(7,HIGH);
+    intervalo = 75;
+    }
+
+    else if (distancia <= 20) {
+      digitalWrite(13,LOW);
+    digitalWrite(12,LOW);
+    digitalWrite(11,HIGH);
+    digitalWrite(10,HIGH);
+    digitalWrite(9,HIGH);
+    digitalWrite(8,HIGH);
+    digitalWrite(7,HIGH);
+    intervalo = 150;
+    }
+  
+    else if (distancia <= 30) {
+      digitalWrite(13,LOW);
+    digitalWrite(12,LOW);
+    digitalWrite(11,LOW);
+    digitalWrite(10,HIGH);
+    digitalWrite(9,HIGH);
+    digitalWrite(8,HIGH);
+    digitalWrite(7,HIGH);
+    intervalo = 200;
+    }
+
+     else if (distancia <= 40) {
+      digitalWrite(13,LOW);
+    digitalWrite(12,LOW);
+    digitalWrite(11,LOW);
+    digitalWrite(10,LOW);
+    digitalWrite(9,HIGH);
+    digitalWrite(8,HIGH);
+    digitalWrite(7,HIGH);
+    intervalo = 250;
+    }
+
+    else if (distancia <= 50) {
+      digitalWrite(13,LOW);
+    digitalWrite(12,LOW);
+    digitalWrite(11,LOW);
+    digitalWrite(10,LOW);
+    digitalWrite(9,LOW);
+    digitalWrite(8,HIGH);
+    digitalWrite(7,HIGH);
+    intervalo = 350;
+    }
+
+    else if (distancia <= 60) {
+      digitalWrite(13,LOW);
+    digitalWrite(12,LOW);
+    digitalWrite(11,LOW);
+    digitalWrite(10,LOW);
+    digitalWrite(9,LOW);
+    digitalWrite(8,LOW);
+    digitalWrite(7,HIGH);
+    intervalo = 450;
+    }
+  tone(buzzer,1750);
+  delay(intervalo);
+  noTone(buzzer);
+  delay(intervalo);
+  }
+}
+
+
+
+          </pre>
+         
       </div>
-   
-      
-   
+    </div>
   </section>
-  <!-- end how section -->
+  <!-- end about section -->
 
   
 
