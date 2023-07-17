@@ -81,7 +81,7 @@
                     <div class="detail-box">
                       <div>
                         <h1>
-                          Scripts
+                          Arduino
                         </h1>
                         <h2>
                           Do it yourself 
@@ -92,7 +92,7 @@
                   </div>
                   <div class="col-md-5">
                     <div class="img-box">
-                      <img src="images/script.png" alt="" />
+                      <img src="images/arduino-logo.png" alt="" />
                     </div>
                   </div>
                 </div>
@@ -107,69 +107,91 @@
     <!-- end slider section -->
   </div>
 
-<!-- how section -->
-  <section class="how_section layout_padding">
-    <div class="heading_container">
-      <h2>
-        Do It Yourself Scripts
-      </h2>
-    </div>
-    <div class="how_container">
-      <a href="/script-cam-online_mat">
+<!-- about section -->
+
+  <section class="about_section layout_padding-bottom">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Do it Yourself Arduino
+        </h2>
+      </div>
       <div class="box">
+
         <div class="img-box">
           
-<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-code" viewBox="0 0 16 16"> <path d="M5.854 4.854a.5.5 0 1 0-.708-.708l-3.5 3.5a.5.5 0 0 0 0 .708l3.5 3.5a.5.5 0 0 0 .708-.708L2.707 8l3.147-3.146zm4.292 0a.5.5 0 0 1 .708-.708l3.5 3.5a.5.5 0 0 1 0 .708l-3.5 3.5a.5.5 0 0 1-.708-.708L13.293 8l-3.147-3.146z"/> </svg> 
+        </div>
+        <div class="detail-box">
+          <h3>Lista de Materiais:</h3>
+          <h6>Arduino Uno R3:</h6>
+          <img src="images/arduinor3.png" width="300px" height="300px" alt="">
+          <br><br>
+          <h6>Ethernet Shield:</h6>
+          <img src="images/EthernetShield.png" width="300px" height="300px" alt="">
+          <br><br>
+          <h6>Módulo de relé ou relé shield com até 12 relés:</h6>
+          <img src="images/Rele2.png" width="300px" height="300px" alt="">
+          <br><br>
+          <h6>Roteador D- Link DI-524 ou qualquer outro compatível co fonte de alimentação:</h6>
+          <img src="images/Roteador1.png" width="300px" height="300px" alt="">
+          <br><br>
+          <h6>Câmera IP Wifi Pan/Tilt ou fixa com fonte de alimentação:</h6>
+          <img src="images/Camera1.png" width="300px" height="300px" alt="">
+          <br><br>
+          <h6> 1ª- Opção: Fonte de alimentação para o Arduino 5V/2A com saída USB:
+Obs1.: Corrente de 2A devido à alimentação do Arduino/Ethernet Shield e Módulo de relés.
+Obs2.: Aquecimento reduzido pois 5V da fonte já está na tensão de operação do sistema todo.</h6>
+          <img src="images/Fonte1.png" width="300px" height="300px" alt="">
+          <br><br>
+          <h6>  2ª- Opção:Fonte de alimentação para o Arduino 9V/2A com saída P4:
+Obs1.: Corrente de 2A devido à alimentação do Arduino/Ethernet Shield e Módulo de relés.
+Obs2.: Esta opção gera um Aquecimento maior na placa Arduino devido à tenão da fonte de 9V passar por um regulador de tensão de 5V existente na placa Arduino  para alimentar todo o sistema.
 
-        </div>
-        
-        <div class="detail-box">
-          <h5>
-            Lista de Materiais
-          </h5>
-          <p>
-            Materiais necessarios
-          </p>
-        </div>
-      </a>
-      </a> 
-      </div>
-                 <a href="/script-cam-online_sc">
-      <div class="box">
-        <div class="img-box">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-code" viewBox="0 0 16 16"> <path d="M5.854 4.854a.5.5 0 1 0-.708-.708l-3.5 3.5a.5.5 0 0 0 0 .708l3.5 3.5a.5.5 0 0 0 .708-.708L2.707 8l3.147-3.146zm4.292 0a.5.5 0 0 1 .708-.708l3.5 3.5a.5.5 0 0 1 0 .708l-3.5 3.5a.5.5 0 0 1-.708-.708L13.293 8l-3.147-3.146z"/> </svg> 
-        </div>
-        <div class="detail-box">
-          <h5>
-            Programa Arduino - Arduino Camera IP Wifi Control.ino:
+</h6>
+<img src="images/Fonte2.png" width="300px" height="300px" alt="">
+          
+          <br><br>
+          <h6>  Protoboard para montagens:
 
-          </h5>
-          <p>
- Atenção para o risco de choque elétrico, utilize cabos dimensionados pela capacidade de corrente;
-Utilize sempre Disjuntores ou fusíveis para cada  Dispositivo a ser acionado.
-          </p>
-        </div>
-        </a>
+</h6>
+          <img src="images/IMG_1094.JPG" width="300px" height="300px" alt="">
+
+
+<br><br>
+          <h6>   Leds para montagem didática e verificação de funcionamento:
+
+</h6>
+          <img src="images/24.png" width="300px" height="300px" alt="">
+
+<br><br>
+          <h6>   Resistores para ligar aos leds e limitar a corrente em 20mA:
+
+</h6>
+          <img src="images/30.png" width="300px" height="300px" alt="">
+
+          <br><br>
+          <h6>   Fios Jumpers - Macho/Macho, Fêmea/Fêmea e Macho/Fêmea:
+
+</h6>
+          <img src="images/8.png" width="300px" height="300px" alt="">
+
+          <br><br>
+          <h6>   
+Cabo USB - tipo A/tipo B para ligação entre Arduino e PC:
+</h6>
+          <img src="images/31.png" width="300px" height="300px" alt="">
+
+          <br><br>
+          <h6>   
+ 1x Cabo de rede RJ45 para ligação entre Roteador e Ethernet Shield;
+1x Cabo de rede RJ45 para ligação entre Roteador e Câmera IP.
+</h6>
+          <img src="images/CaboRede.png" width="300px" height="300px" alt="">
+
       </div>
-      <a href="/script-cam-online">
-      <div class="box">
-        <div class="img-box">
-          <?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-code" viewBox="0 0 16 16"> <path d="M5.854 4.854a.5.5 0 1 0-.708-.708l-3.5 3.5a.5.5 0 0 0 0 .708l3.5 3.5a.5.5 0 0 0 .708-.708L2.707 8l3.147-3.146zm4.292 0a.5.5 0 0 1 .708-.708l3.5 3.5a.5.5 0 0 1 0 .708l-3.5 3.5a.5.5 0 0 1-.708-.708L13.293 8l-3.147-3.146z"/> </svg> 
-        </div>
-        <div class="detail-box">
-          <h5>
-            Arduino Camera IP Wifi Control.ino:
-          </h5>
-          <p>
-             Código acionamento de fechadura elétrica, intalado em Arduino pinos digitais: D6, D7e D8. Divice 10,11 e 12 tempo do pulso em 2 segundos, relé contato temporizado em 2000ms. 
-          </p>
-        </div>
-      </div>
-      </a>
-      
-   
+    </div>
   </section>
-  <!-- end how section -->
+  <!-- end about section -->
 
   
 

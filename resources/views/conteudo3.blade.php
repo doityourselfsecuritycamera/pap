@@ -157,7 +157,7 @@
         </div>
         <div class="detail-box">
           <h5>
-            Arduino.ini
+            Arduino.ino
           </h5>
           <p>
              Script de arduino

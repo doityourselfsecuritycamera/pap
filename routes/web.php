@@ -29,10 +29,6 @@ Route::get('/conteudo3', function () {
     return view('conteudo3');
 });
 
-Route::get('/conteudo4', function () {
-    return view('conteudo4');
-});
-
 Route::get('/script-1', function () {
     return view('script-1');
 });
@@ -69,3 +65,20 @@ Route::get('/script-det2', function () {
 Route::get('/script-det3', function () {
     return view('script-det3');
 });
+
+Route::get('/cam-online', function () {
+    return view('conteudo4');
+});
+
+Route::get('/script-cam-online', function () {
+    return view('script-cam-online');
+});
+
+Route::get('/script-cam-online_mat', function () {
+    return view('script-cam-online_mat');
+});
+
+Route::get('/script-cam-online_sc', function () {
+    return view('script-cam-online_sc');
+});
+
