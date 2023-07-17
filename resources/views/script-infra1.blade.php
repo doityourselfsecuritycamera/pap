@@ -81,7 +81,7 @@
                     <div class="detail-box">
                       <div>
                         <h1>
-                          Python
+                          Arduino
                         </h1>
                         <h2>
                           Do it yourself 
@@ -92,7 +92,7 @@
                   </div>
                   <div class="col-md-5">
                     <div class="img-box">
-                      <img src="images/python.png" alt="" />
+                      <img src="images/arduino-logo.png" alt="" />
                     </div>
                   </div>
                 </div>
@@ -113,45 +113,28 @@
     <div class="container">
       <div class="heading_container">
         <h2>
-          Do it Yourself Servo
+          Do it Yourself Arduino
         </h2>
       </div>
       <div class="box">
 
         <div class="img-box">
-          <img src="images/servo.png" width="300px" height="300px" alt="">
+          
         </div>
         <div class="detail-box">
-          <p> <br> <br>
-           Este codigo e um script de python do servo
-
-
-          </p>
-          
-          
-        </div>
-        <pre>
-from pyfirmata import Arduino,SERVO
-from time import sleep
-
-port = 'COM4'
-pinH = 8
-pinV = 10
-board = Arduino(port)
-
-board.digital[pinH].mode = SERVO
-board.digital[pinV].mode = SERVO
-
-def rotateServo(pin,angle):
-    board.digital[pin].write(angle)
-    sleep(0.070)
-
-    while True:
-     for x in range(0,180):
-         rotateServo(pinH,x)
-     for i in range(180,1,-1):
-        rotateServo(pinV, i)
-          </pre>
+          <h3>Lista de Materiais:</h3>
+          <h6>7 resistencias 330 ohm</h6>
+          <img src="images/330-ohm-medio-w.png" width="300px" height="300px" alt="">
+          <br><br>
+          <h6>1 Buzzer</h6>
+          <img src="images/9k.png" width="300px" height="300px" alt="">
+          <br><br>
+          <h6>7 Leds</h6>
+          <img src="images/7leds.png" width="300px" height="300px" alt="">
+          <br><br>
+          <h6>1 sensor ultrassonico</h6>
+          <img src="images/som.png" width="300px" height="300px" alt="">
+  
       </div>
     </div>
   </section>

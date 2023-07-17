@@ -82,3 +82,6 @@ Route::get('/script-cam-online_sc', function () {
     return view('script-cam-online_sc');
 });
 
+Route::get('/cam-mov-mat', function () {
+    return view('cam-mov-mat');
+});

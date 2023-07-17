@@ -81,7 +81,7 @@
                     <div class="detail-box">
                       <div>
                         <h1>
-                          Scripts
+                          Arduino
                         </h1>
                         <h2>
                           Do it yourself 
@@ -92,7 +92,7 @@
                   </div>
                   <div class="col-md-5">
                     <div class="img-box">
-                      <img src="images/script.png" alt="" />
+                      <img src="images/arduino-logo.png" alt="" />
                     </div>
                   </div>
                 </div>
@@ -107,36 +107,38 @@
     <!-- end slider section -->
   </div>
 
-<!-- how section -->
-  <section class="how_section layout_padding">
-    <div class="heading_container">
-      <h2>
-        Do It Yourself Scripts
-      </h2>
-    </div>
-    <div class="how_container">
+<!-- about section -->
 
-                 <a href="/script-det2">
+  <section class="about_section layout_padding-bottom">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Do it Yourself Arduino
+        </h2>
+      </div>
       <div class="box">
+
         <div class="img-box">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-code" viewBox="0 0 16 16"> <path d="M5.854 4.854a.5.5 0 1 0-.708-.708l-3.5 3.5a.5.5 0 0 0 0 .708l3.5 3.5a.5.5 0 0 0 .708-.708L2.707 8l3.147-3.146zm4.292 0a.5.5 0 0 1 .708-.708l3.5 3.5a.5.5 0 0 1 0 .708l-3.5 3.5a.5.5 0 0 1-.708-.708L13.293 8l-3.147-3.146z"/> </svg> 
+          
         </div>
         <div class="detail-box">
-          <h5>
-            trackingFace.py
-
-          </h5>
-          <p>
- Mostramos como e que podemos criar script como por exemplo detetar imagens 3d
-          </p>
-        </div>
-        </a>
+          <h3>Lista de Materiais:</h3>
+          <h6>Arduino Uno:</h6>
+          <img src="images/arduino-uno.png" width="300px" height="300px" alt="">
+          <br><br>
+          <h6>Camera USB: </h6>
+          <img src="images/cam-usb.png" width="300px" height="300px" alt="">
+          <br><br>
+          <h6>2 Servo Motores:</h6>
+          <img src="images/2servo.png" width="300px" height="300px" alt="">
+          <br><br>
+          <h6>Suporte de dois exos para servo motor:</h6>
+          <img src="images/supp.png" width="300px" height="300px" alt="">
+  
       </div>
-   
-      
-   
+    </div>
   </section>
-  <!-- end how section -->
+  <!-- end about section -->
 
   
 

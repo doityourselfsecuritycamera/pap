@@ -81,7 +81,7 @@
                     <div class="detail-box">
                       <div>
                         <h1>
-                          Python
+                          Arduino
                         </h1>
                         <h2>
                           Do it yourself 
@@ -92,7 +92,7 @@
                   </div>
                   <div class="col-md-5">
                     <div class="img-box">
-                      <img src="images/python.png" alt="" />
+                      <img src="images/arduino-logo.png" alt="" />
                     </div>
                   </div>
                 </div>
@@ -113,45 +113,156 @@
     <div class="container">
       <div class="heading_container">
         <h2>
-          Do it Yourself Servo
+          Do it Yourself Arduino
         </h2>
       </div>
       <div class="box">
 
         <div class="img-box">
-          <img src="images/servo.png" width="300px" height="300px" alt="">
+          
         </div>
         <div class="detail-box">
+       
           <p> <br> <br>
-           Este codigo e um script de python do servo
 
+           
+Codigo do Sensor de Proximidade .ino
 
           </p>
           
           
         </div>
         <pre>
-from pyfirmata import Arduino,SERVO
-from time import sleep
+const int TRIG = 3, ECHO = 2, buzzer = 5;
+int intervalo, distancia;
 
-port = 'COM4'
-pinH = 8
-pinV = 10
-board = Arduino(port)
+int sensor_objeto(int pinotrig,int pinoecho){
+  pinMode(pinotrig, OUTPUT);
+  digitalWrite(pinotrig,LOW);
+  delayMicroseconds(2);
+  digitalWrite(pinotrig,HIGH);
+  delayMicroseconds(10);
+  digitalWrite(pinotrig,LOW);
 
-board.digital[pinH].mode = SERVO
-board.digital[pinV].mode = SERVO
+  return pulseIn(pinoecho,HIGH)/58;
+}
 
-def rotateServo(pin,angle):
-    board.digital[pin].write(angle)
-    sleep(0.070)
+void setup() {
+  Serial.begin(9600);
+  pinMode(TRIG,OUTPUT);
+  pinMode(ECHO,INPUT);
+  pinMode(buzzer,OUTPUT);
+  pinMode(7,OUTPUT);
+  pinMode(8,OUTPUT);
+  pinMode(9,OUTPUT);
+  pinMode(10,OUTPUT);
+  pinMode(11,OUTPUT);
+  pinMode(12,OUTPUT);
+  pinMode(13,OUTPUT);
+}
 
-    while True:
-     for x in range(0,180):
-         rotateServo(pinH,x)
-     for i in range(180,1,-1):
-        rotateServo(pinV, i)
+void loop() {
+
+  distancia = sensor_objeto(TRIG,ECHO);
+  Serial.println(distancia);
+  if (distancia <= 10) {
+    digitalWrite(13,HIGH);
+    digitalWrite(12,HIGH);
+    digitalWrite(11,HIGH);
+    digitalWrite(10,HIGH);
+    digitalWrite(9,HIGH);
+    digitalWrite(8,HIGH);
+    digitalWrite(7,HIGH);
+    tone(buzzer, 1750);
+  }
+
+  else if (distancia > 60) {
+    digitalWrite(13,LOW);
+    digitalWrite(12,LOW);
+    digitalWrite(11,LOW);
+    digitalWrite(10,LOW);
+    digitalWrite(9,LOW);
+    digitalWrite(8,LOW);
+    digitalWrite(7,LOW);
+    noTone(buzzer);
+  }
+  else {
+    if (distancia <= 15) {
+      digitalWrite(13,LOW);
+    digitalWrite(12,HIGH);
+    digitalWrite(11,HIGH);
+    digitalWrite(10,HIGH);
+    digitalWrite(9,HIGH);
+    digitalWrite(8,HIGH);
+    digitalWrite(7,HIGH);
+    intervalo = 75;
+    }
+
+    else if (distancia <= 20) {
+      digitalWrite(13,LOW);
+    digitalWrite(12,LOW);
+    digitalWrite(11,HIGH);
+    digitalWrite(10,HIGH);
+    digitalWrite(9,HIGH);
+    digitalWrite(8,HIGH);
+    digitalWrite(7,HIGH);
+    intervalo = 150;
+    }
+  
+    else if (distancia <= 30) {
+      digitalWrite(13,LOW);
+    digitalWrite(12,LOW);
+    digitalWrite(11,LOW);
+    digitalWrite(10,HIGH);
+    digitalWrite(9,HIGH);
+    digitalWrite(8,HIGH);
+    digitalWrite(7,HIGH);
+    intervalo = 200;
+    }
+
+     else if (distancia <= 40) {
+      digitalWrite(13,LOW);
+    digitalWrite(12,LOW);
+    digitalWrite(11,LOW);
+    digitalWrite(10,LOW);
+    digitalWrite(9,HIGH);
+    digitalWrite(8,HIGH);
+    digitalWrite(7,HIGH);
+    intervalo = 250;
+    }
+
+    else if (distancia <= 50) {
+      digitalWrite(13,LOW);
+    digitalWrite(12,LOW);
+    digitalWrite(11,LOW);
+    digitalWrite(10,LOW);
+    digitalWrite(9,LOW);
+    digitalWrite(8,HIGH);
+    digitalWrite(7,HIGH);
+    intervalo = 350;
+    }
+
+    else if (distancia <= 60) {
+      digitalWrite(13,LOW);
+    digitalWrite(12,LOW);
+    digitalWrite(11,LOW);
+    digitalWrite(10,LOW);
+    digitalWrite(9,LOW);
+    digitalWrite(8,LOW);
+    digitalWrite(7,HIGH);
+    intervalo = 450;
+    }
+  tone(buzzer,1750);
+  delay(intervalo);
+  noTone(buzzer);
+  delay(intervalo);
+  }
+}
+
+
+
           </pre>
+         
       </div>
     </div>
   </section>

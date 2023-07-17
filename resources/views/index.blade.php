@@ -218,10 +218,10 @@
         
         <div class="detail-box">
           <h5>
-            Leitores infravermelhos
+            Sensores de Proximidade
           </h5>
           <p>
-            Mostramos como e que podemos criar scripts de leitores infravermelhos
+            Mostramos como e que podemos criar scripts de lsensores de proximidade
           </p>
         </div>
       </a>
