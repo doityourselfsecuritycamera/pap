@@ -328,11 +328,11 @@
         <div class="col-md-4">
           <div class="info_contact">
             <div class="info_logo">
-              <a href="/">
+              
                 <span>
                   Do It Yourself Security Camera
                 </span>
-              </a>
+             
             </div>
             <h5>
               Contacte nos!
